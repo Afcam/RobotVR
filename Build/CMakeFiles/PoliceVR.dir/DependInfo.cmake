@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/SG90.c" "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/PoliceVR.dir/src/SG90.c.o"
-  "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/UDP.c" "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/PoliceVR.dir/src/UDP.c.o"
-  "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/UnrealEngine.c" "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o"
-  "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/main.c" "/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/PoliceVR.dir/src/main.c.o"
+  "/home/pi/RobotVR/src/SG90.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/SG90.c.o"
+  "/home/pi/RobotVR/src/UDP.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UDP.c.o"
+  "/home/pi/RobotVR/src/UnrealEngine.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o"
+  "/home/pi/RobotVR/src/main.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

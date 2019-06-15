@@ -16,3 +16,6 @@ include_directories(include)
 file(GLOB SOURCES "src/*.c")
 
 add_executable(PoliceVR ${SOURCES})
+
+# Make sure the executable links to the wiringPi lib
+target_link_libraries(PoliceVR wiringPi)

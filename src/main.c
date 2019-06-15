@@ -5,8 +5,14 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+#include <wiringPi.h>
+
 #include "UDP.h"
 #include "UnrealEngine.h"
+
+//Define GPIO Pin
+#define YAW 26
+#define PITCH 23
 
 void *Bosta(void *arg)
 {
@@ -37,25 +43,36 @@ int main()
     // u_Front = InitUDP(5002);
     fflush(stdout);
     char *token;
-    //Strings que armazenam o valor dos ângulos
-    char cPitch[13], cYaw[13];
 
     int i;
     int a = 0;
 
     char *menssage;
-    Axes *Rot ;
+    Axes *Rot;
+    // Intialize the wiringPi Library
+        wiringPiSetup();
+    pinMode(PITCH, PWM_OUTPUT);
+    pwmSetMode(PWM_MODE_MS);
+    pwmSetClock(384);  //clock at 50kHz (20us tick)
+    pwmSetRange(1000); //range at 1000 ticks (20ms)
+
+    pinMode(YAW, PWM_OUTPUT);
+    pwmSetMode(PWM_MODE_MS);
+    pwmSetClock(384);  //clock at 50kHz (20us tick)
+    pwmSetRange(1000); //range at 1000 ticks (20ms)
 
     while (1)
     {
         menssage = ReadUDP(u_Servo);
         Rot = UDP_30000(menssage);
-        printf("++ %f %f %f \n",Rot->Pich,Rot->Yaw,Rot->Yaw);
-
+        printf("++ %f %f %f \n", Rot->Pich, Rot->Yaw, Rot->Yaw);
+        pwmWrite(PITCH, (int)Rot->Pich +90);
+        pwmWrite(YAW, (int)Rot->Yaw);
         // printf("%s", menssage);
         printf("%d", a);
         a++;
     }
+
     // Normal(u_Servo);
     // pthread_create(&t_Servo, NULL, Bosta, (void*)&u_Servo);
     // pthread_join(Normal, NULL);
@@ -69,3 +86,4 @@ int main()
 
     return (0);
 }
+

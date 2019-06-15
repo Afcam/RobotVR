@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,15 +6,77 @@
 
 #IncludeRegexTransform: 
 
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/UnrealEngine.c
-UnrealEngine.h
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/UnrealEngine.h
+/home/pi/RobotVR/src/SG90.c
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+stdlib.h
+-
+pthread.h
+-
+SG90.h
+/home/pi/RobotVR/src/SG90.h
 
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/src/UnrealEngine.h
+/home/pi/RobotVR/src/SG90.h
+
+/home/pi/RobotVR/src/UDP.c
+UDP.h
+/home/pi/RobotVR/src/UDP.h
+
+/home/pi/RobotVR/src/UDP.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+errno.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+
+/home/pi/RobotVR/src/UnrealEngine.c
+UnrealEngine.h
+/home/pi/RobotVR/src/UnrealEngine.h
+
+/home/pi/RobotVR/src/UnrealEngine.h
 stdio.h
 -
 string.h
 -
 stdlib.h
 -
+
+/home/pi/RobotVR/src/main.c
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+stdlib.h
+-
+pthread.h
+-
+wiringPi.h
+-
+UDP.h
+/home/pi/RobotVR/src/UDP.h
+UnrealEngine.h
+/home/pi/RobotVR/src/UnrealEngine.h
 
