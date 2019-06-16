@@ -1,5 +1,7 @@
-#include <stdio.h>
+#ifndef UnrealEngine
+#define UnrealEngine
 
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -19,3 +21,5 @@ typedef struct
 
 Axes *UEAxes(char *msg);
     Rear *UERear(char *msg);
+
+#endif

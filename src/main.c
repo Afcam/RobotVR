@@ -85,7 +85,7 @@ void *RearMotor()
     for (;;)
     {
         Motor = UERear(UDPRead(udp_Rear));
-        printf("++ %c %d \n", Motor->Dir, Motor->Speed);
+        printf("\n+Rear: %c %d \n", Motor->Dir, Motor->Speed);
         DCRear(Motor);
 
             // pwmWrite(PITCH, 75);

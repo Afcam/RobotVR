@@ -7,7 +7,7 @@ set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 find_package(Threads REQUIRED)
 
 #Bring the headers, such as Student.h into the project
-include_directories(include)
+include_directories(SHARED include)
 
 #Can manually add the sources using the set command as follows:
 #set(SOURCES src/mainapp.cpp src/Student.cpp)
@@ -18,6 +18,6 @@ file(GLOB SOURCES "src/*.c")
 add_executable(PoliceVR ${SOURCES})
 
 # Make sure the executable links to the wiringPi lib
-# target_link_libraries(PoliceVR wiringPi)
+target_link_libraries(PoliceVR wiringPi)
 target_link_libraries(PoliceVR pthread)
 

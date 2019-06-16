@@ -1,5 +1,4 @@
 #include "Motor.h"
-#include "UnrealEngine.h"
 
 void SG90Setup(int Pin)
 {
@@ -15,7 +14,7 @@ void DCRearSetup()
         //H-bridge gpios
         //Enables
         pinMode(EnA, OUTPUT);
-        pinMode(PiEnBn, OUTPUT);
+        pinMode(EnB, OUTPUT);
 
         //PWM
         softPwmCreate(FBpwm, minValue, pwmRange);
@@ -33,7 +32,8 @@ void DCRear(Rear *Motor)
     case ('F'):
         digitalWrite(EnA, HIGH);
         digitalWrite(EnB, LOW);
-        pwmWrite(Pin, Motor->Speed);
+        pwmWrite(FBpwm, Motor->Speed);
+	printf("Mudou F");
         break;
     case ('B'):
         digitalWrite(EnA, LOW);
@@ -47,6 +47,7 @@ void DCRear(Rear *Motor)
             digitalWrite(EnB, HIGH);
             pwmWrite(FBpwm, Motor->Speed);
         }
+	printf("Mudou B");
 
         break;
     default:
