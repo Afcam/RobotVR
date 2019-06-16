@@ -49,7 +49,12 @@ int main()
 
     char *menssage;
     Axes *Rot;
+<<<<<<< HEAD
 
+=======
+    // Intialize the wiringPi Library
+        wiringPiSetup();
+>>>>>>> 23dc21bd8e46f8f9e80f079f492f0f5bf9ce71be
     pinMode(PITCH, PWM_OUTPUT);
     pwmSetMode(PWM_MODE_MS);
     pwmSetClock(384);  //clock at 50kHz (20us tick)
@@ -65,8 +70,13 @@ int main()
         menssage = ReadUDP(u_Servo);
         Rot = UDP_30000(menssage);
         printf("++ %f %f %f \n", Rot->Pich, Rot->Yaw, Rot->Yaw);
+<<<<<<< HEAD
         pwmWrite(PITCH, 75);
         pwmWrite(YAW 75);
+=======
+        pwmWrite(PITCH, (int)Rot->Pich +90);
+        pwmWrite(YAW, (int)Rot->Yaw);
+>>>>>>> 23dc21bd8e46f8f9e80f079f492f0f5bf9ce71be
         // printf("%s", menssage);
         printf("%d", a);
         a++;
@@ -85,3 +95,4 @@ int main()
 
     return (0);
 }
+

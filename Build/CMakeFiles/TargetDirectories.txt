@@ -1,3 +1,0 @@
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/rebuild_cache.dir
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/PoliceVR.dir
-/home/GitHub/Sistemas-_Embarcados/2_PCs/CODE/Build/CMakeFiles/edit_cache.dir

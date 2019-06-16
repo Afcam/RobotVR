@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/PoliceVR.dir/src/SG90.c.o CMakeFiles/PoliceVR.dir/src/UDP.c.o CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o CMakeFiles/PoliceVR.dir/src/main.c.o  -o PoliceVR 
