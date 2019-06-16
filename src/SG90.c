@@ -7,23 +7,23 @@
 
 #include "SG90.h"
 
-// int SG90_Server(char *buffer)
-// {
-//     char *token;
+int SG90_Server(char *buffer)
+{
+    char *token;
 
-//     token = strtok(menssage, " ");
-//     i = 0;
-//     while (token != NULL)
-//     {
-//         if (token != NULL)
-//         {
-//             if (i == 0)
-//                 strcpy(cPitch, token);
-//             else if (i == 1)
-//                 strcpy(cYaw, token);
-//         }
-//         token = strtok(NULL, " ");
-//         i++;
-//     }
-// }
-// // #include <wiringPi.h>
+    token = strtok(menssage, " ");
+    i = 0;
+    while (token != NULL)
+    {
+        if (token != NULL)
+        {
+            if (i == 0)
+                strcpy(cPitch, token);
+            else if (i == 1)
+                strcpy(cYaw, token);
+        }
+        token = strtok(NULL, " ");
+        i++;
+    }
+}
+// #include <wiringPi.h>
