@@ -5,11 +5,17 @@
 
 typedef struct
 {
-    float Pich;
-    float Yaw;
+    float Pich ;
+    float Yaw ;
     float Roll;
 } Axes;
 
+typedef struct
+{
+    char Dir;
+    int Speed ;
 
+} Rear;
 
-Axes *UDP_30000(char *msg);
+Axes *UEAxes(char *msg);
+Rear *UERear(char *msg);

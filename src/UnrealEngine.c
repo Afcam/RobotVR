@@ -1,6 +1,6 @@
 #include "UnrealEngine.h"
 
-Axes *UDP_30000(char *msg)
+Axes *UEAxes(char *msg)
 {
     Axes *Rot = malloc(sizeof(Axes));
     char *token;
@@ -27,4 +27,23 @@ Axes *UDP_30000(char *msg)
         token = strtok(NULL, " ");
     }
     return Rot;
+}
+
+Rear *UERear(char *msg)
+{
+    Rear *Control = (Rear*)malloc(sizeof(Rear));
+    int Val = atoi(msg);
+
+    if (Val <= 0)
+    {
+        Control->Dir = 'B';
+        Control->Speed = abs(Val);
+    }
+    else
+    {
+        Control->Dir = 'F';
+        Control->Speed = abs(Val);
+    }
+
+    return Control;
 }

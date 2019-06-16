@@ -1,22 +1,9 @@
-/**
- * @file UDP->c
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2019-06-10
- * 
- * @copyright Copyright (c) 2019
- * 
- */
 #include "UDP.h"
 
-/**
- * @brief 
- * 
- */
-UDP *InitUDP(int Port)
+
+UDP *UDPSetup(int Port)
 {
-    UDP *udp = malloc(sizeof(UDP));
+    UDP *udp = (UDP*)malloc(sizeof(UDP));
 
     if ((udp->sock = socket(AF_INET, SOCK_DGRAM, 0)) == -1)
     {
@@ -43,24 +30,16 @@ UDP *InitUDP(int Port)
     return udp;
 }
 
-/**
- * @brief 
- * 
-//  */
-char *ReadUDP(UDP *udp)
+
+char *UDPRead(UDP *udp)
 {
 
-    // printf("\n(%s , %d) said : ", inet_ntoa(udp->client_addr.sin_addr),
-    //        ntohs(udp->client_addr.sin_port));
     udp->bytes_read = recvfrom(udp->sock, udp->recv_data, 1024, 0,
                                (struct sockaddr *)&udp->client_addr, &udp->addr_len);
 
     udp->recv_data[udp->bytes_read] = '\0';
-
     // printf("\n(%s , %d) said : ", inet_ntoa(udp->client_addr.sin_addr),
     //        ntohs(udp->client_addr.sin_port));
-    // printf("%s", udp->recv_data);
-    // return udp->recv_data;
     fflush(stdout);
     return udp->recv_data;
 }

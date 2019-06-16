@@ -1,13 +1,3 @@
-/**
- * @file UDP.h
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2019-06-10
- * 
- * @copyright Copyright (c) 2019
- * 
- */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,10 +8,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-/**
- * @brief 
- * 
- */
+
 typedef struct // Cria uma STRUCT para armazenar os dados de uma pessoa
 {
     int sock;
@@ -30,14 +17,5 @@ typedef struct // Cria uma STRUCT para armazenar os dados de uma pessoa
     struct sockaddr_in server_addr, client_addr;
 } UDP; // Define o nome do novo tipo criado
 
-/**
- * @brief 
- * 
- */
-UDP *InitUDP(int Port);
-
-    /**
- * @brief 
- * 
- */
-char *ReadUDP(UDP *udp);
+UDP *UDPSetup(int Port);
+char *UDPRead(UDP *udp);
