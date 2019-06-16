@@ -7,6 +7,18 @@
 #IncludeRegexTransform: 
 
 /home/GitHub/RobotVR/src/Motor.h
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+stdlib.h
+-
+pthread.h
+-
 
 /home/GitHub/RobotVR/src/UDP.h
 stdio.h

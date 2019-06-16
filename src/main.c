@@ -6,6 +6,7 @@
 #include <pthread.h>
 
 // #include <wiringPi.h>
+// #include <softPwm.h>
 
 #include "UDP.h"
 #include "Motor.h"
@@ -29,15 +30,18 @@ int main()
     //     fprintf(stdout, "oops: %s\n", strerror(errno));
     //     return 1;
     // }
-    int x;
+
     // pthread_create(&th_Orientation, NULL, Orientation, NULL);
     pthread_create(&th_Rear, NULL, RearMotor, NULL);
     pthread_create(&th_Front, NULL, FrontMotor, NULL);
+    
     // while(1);
 
     /* wait for thread to finish */
     // pthread_join(th_Orientation, NULL);
     pthread_join(th_Rear, NULL);
+    pthread_join(th_Front, NULL);
+
     return (0);
 }
 // ========================================================
@@ -68,32 +72,40 @@ void *Orientation()
 // ========================================================
 void *RearMotor()
 {
+    // pthread_t teste;
     UDP *udp_Rear;
     Rear *Motor;
+    // DCRearSetup();
     udp_Rear = UDPSetup(30001);
     fflush(stdout);
     int a = 0;
+
+    // pthread_create(&teste, NULL, FrontMotorPwm, &str);
+
     for (;;)
     {
         Motor = UERear(UDPRead(udp_Rear));
         printf("++ %c %d \n", Motor->Dir, Motor->Speed);
-        // pwmWrite(PITCH, 75);
-        // pwmWrite(YAW 75);
-        printf("%d", a);
+        // DCRear(Motor);
+
+            // pwmWrite(PITCH, 75);
+            // pwmWrite(YAW 75);
+            printf("%d", a);
         a++;
     }
 }
 // ========================================================
 // DC Motors Front
 // ========================================================
+
 void *FrontMotor()
 {
     UDP *udp_Front;
-    // Rear *Motor;
     udp_Front = UDPSetup(30002);
     fflush(stdout);
     int a = 0;
     char *str;
+
     for (;;)
     {
         str = UDPRead(udp_Front);
@@ -102,6 +114,7 @@ void *FrontMotor()
         a++;
     }
 }
+
 // ========================================================
 // TRASH
 // ========================================================
