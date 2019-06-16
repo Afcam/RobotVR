@@ -32,4 +32,4 @@
 
 void SG90Setup(int Pin);
 void DCRearSetup();
-// void DCRear(Rear *Motor);
+void DCRear(Rear *Motor);

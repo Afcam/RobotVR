@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-// #include <wiringPi.h>
-// #include <softPwm.h>
+#include <wiringPi.h>
+#include <softPwm.h>
 
 #include "UDP.h"
 #include "Motor.h"
@@ -25,22 +25,22 @@ int main()
     pthread_t th_Front;
 
     // Initializes Wiring Pi
-    // if (wiringPiSetup() == -1)
-    // {
-    //     fprintf(stdout, "oops: %s\n", strerror(errno));
-    //     return 1;
-    // }
+    if (wiringPiSetup() == -1)
+    {
+        fprintf(stdout, "oops: %s\n", strerror(errno));
+        return 1;
+    }
 
     // pthread_create(&th_Orientation, NULL, Orientation, NULL);
     pthread_create(&th_Rear, NULL, RearMotor, NULL);
-    pthread_create(&th_Front, NULL, FrontMotor, NULL);
+    // pthread_create(&th_Front, NULL, FrontMotor, NULL);
     
     // while(1);
 
     /* wait for thread to finish */
     // pthread_join(th_Orientation, NULL);
     pthread_join(th_Rear, NULL);
-    pthread_join(th_Front, NULL);
+    // pthread_join(th_Front, NULL);
 
     return (0);
 }
@@ -75,7 +75,7 @@ void *RearMotor()
     // pthread_t teste;
     UDP *udp_Rear;
     Rear *Motor;
-    // DCRearSetup();
+    DCRearSetup();
     udp_Rear = UDPSetup(30001);
     fflush(stdout);
     int a = 0;
@@ -86,7 +86,7 @@ void *RearMotor()
     {
         Motor = UERear(UDPRead(udp_Rear));
         printf("++ %c %d \n", Motor->Dir, Motor->Speed);
-        // DCRear(Motor);
+        DCRear(Motor);
 
             // pwmWrite(PITCH, 75);
             // pwmWrite(YAW 75);
