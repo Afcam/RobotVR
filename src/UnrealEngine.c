@@ -14,10 +14,20 @@ Axes *UEAxes(char *msg)
         case (0):
             // strcpy(Rot->Pich, token);
             Rot->Pich = atof(token + 2 );
+	    if (Rot->Pich < -30)
+		    Rot->Pich = -30;
+	   if (Rot->Pich > 40)
+			 Rot->Pich = 40;
+		 
             break;
         case (1):
             // strcpy(Rot->Yaw, token);
             Rot->Yaw = atof(token + 2);
+	     if (Rot->Yaw < -120)
+		    Rot->Yaw = -120;
+	   if (Rot->Yaw > -35)
+			 Rot->Yaw = -35;
+		
             break;
         default:
             // strcpy(Rot->Roll, token);

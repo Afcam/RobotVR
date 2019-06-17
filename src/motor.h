@@ -30,11 +30,11 @@
 #define dcClock 384
 
 //Front Motor
-#define Left 4
-#define Right 5
-#define Center 6
-#define MaxL 2
-#define MaxR 3
+#define Left 2
+#define Right 3
+#define Center 4
+#define MaxL 5
+#define MaxR 6
 
 void SG90Setup(int Pin);
 void DCRearSetup();

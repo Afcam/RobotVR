@@ -61,8 +61,8 @@ void *Orientation()
     {
         AXIS = UEAxes(UDPRead(udp_Orientation));
         printf("++ %f %f \n", AXIS->Pich, AXIS->Yaw);
-        pwmWrite(PITCH, AXIS->Pich);
-        pwmWrite(YAW, AXIS->Yaw + 90.0);
+        pwmWrite(PITCH, -AXIS->Pich + 70.0);
+        pwmWrite(YAW,-AXIS->Yaw  );
     }
 }
 
