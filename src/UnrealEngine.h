@@ -20,6 +20,6 @@ typedef struct
 } Rear;
 
 Axes *UEAxes(char *msg);
-    Rear *UERear(char *msg);
+Rear *UERear(char *msg);
 
 #endif

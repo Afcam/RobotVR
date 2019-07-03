@@ -9,12 +9,13 @@
 #include <softPwm.h>
 
 #include "UDP.h"
-#include "Motor.h"
+#include "motor.h"
 #include "UnrealEngine.h"
 
 void *Orientation();
 void *RearMotor();
 void *FrontMotor();
+
 // ========================================================
 // Main
 // ========================================================
@@ -25,26 +26,25 @@ int main()
     pthread_t th_Front;
 
     // Initializes Wiring Pi
-    if (wiringPiSetup() == -1)
-    {
-        fprintf(stdout, "oops: %s\n", strerror(errno));
-        return 1;
-    }
+     if (wiringPiSetup() == -1)
+     {
+         fprintf(stdout, "oops: %s\n", strerror(errno));
+         return 1;
+     }
 
-    // pthread_create(&th_Orientation, NULL, Orientation, NULL);
-    pthread_create(&th_Rear, NULL, RearMotor, NULL);
-    // pthread_create(&th_Front, NULL, FrontMotor, NULL);
-    
-    // while(1);
+     pthread_create(&th_Orientation, NULL, Orientation, NULL);
+     pthread_create(&th_Rear, NULL, RearMotor, NULL);
+     pthread_create(&th_Front, NULL, FrontMotor, NULL);
 
     /* wait for thread to finish */
-    // pthread_join(th_Orientation, NULL);
-    pthread_join(th_Rear, NULL);
-    // pthread_join(th_Front, NULL);
+     pthread_join(th_Orientation, NULL);
+     pthread_join(th_Rear, NULL);
+     pthread_join(th_Front, NULL);
 
     return (0);
-}
-// ========================================================
+ }
+
+ // ========================================================
 // Orientation
 // ========================================================
 void *Orientation()
@@ -53,17 +53,16 @@ void *Orientation()
     Axes *AXIS;
     udp_Orientation = UDPSetup(30000);
     fflush(stdout);
-    // SG90Setup(YAW);
-    // SG90Setup(PITCH);
-    int a = 0;
+
+    SG90Setup(YAW);
+    SG90Setup(PITCH);
+
     for (;;)
     {
         AXIS = UEAxes(UDPRead(udp_Orientation));
-        printf("++ %f %f %f \n", AXIS->Pich, AXIS->Yaw, AXIS->Yaw);
-        // pwmWrite(PITCH, 75);
-        // pwmWrite(YAW 75);
-        printf("%d", a);
-        a++;
+        printf("++ %f %f \n", AXIS->Pich, AXIS->Yaw);
+        pwmWrite(PITCH, AXIS->Pich);
+        pwmWrite(YAW, AXIS->Yaw);
     }
 }
 
@@ -72,26 +71,18 @@ void *Orientation()
 // ========================================================
 void *RearMotor()
 {
-    // pthread_t teste;
     UDP *udp_Rear;
     Rear *Motor;
     DCRearSetup();
     udp_Rear = UDPSetup(30001);
     fflush(stdout);
-    int a = 0;
-
-    // pthread_create(&teste, NULL, FrontMotorPwm, &str);
 
     for (;;)
     {
         Motor = UERear(UDPRead(udp_Rear));
         printf("\n+Rear: %c %d \n", Motor->Dir, Motor->Speed);
         DCRear(Motor);
-
-            // pwmWrite(PITCH, 75);
-            // pwmWrite(YAW 75);
-            printf("%d", a);
-        a++;
+        delay(1);
     }
 }
 // ========================================================
@@ -101,17 +92,16 @@ void *RearMotor()
 void *FrontMotor()
 {
     UDP *udp_Front;
+    DCFrontSetup();
     udp_Front = UDPSetup(30002);
     fflush(stdout);
-    int a = 0;
-    char *str;
+    char *msg;
 
     for (;;)
     {
-        str = UDPRead(udp_Front);
-        printf("++ %s %d\n", str, sizeof(str));
-        printf("%d", a);
-        a++;
+        msg = UDPRead(udp_Front);
+        printf("++ %s\n", msg);
+        DCFront(msg);
     }
 }
 
@@ -142,4 +132,31 @@ void *FrontMotor()
 // while (1)
 // {
 
+// }
+
+// void *conometro(void *var)
+// {
+//     // int *vari=var;
+//     for(;;)
+//     {
+//     printf("\n==Timer: %d == \n",(int *)var);
+//     sleep(3);
+//     }
+// }
+
+// void *fteste()
+// {
+//     printf("Estoru na tread");
+//     pthread_t teste;
+
+//     int variavel;
+//     // pthread_create(&te]ç9ste, NULL, conometro, variavel);
+
+//     for(;;)
+//     {
+//         printf("\n Esperando... = ");
+//         printf("%d",variavel);
+//         variavel+=1;
+//         sleep(1);
+//     }
 // }

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,35 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/RobotVR/src/Motor.c
-Motor.h
-/home/pi/RobotVR/src/Motor.h
-
-/home/pi/RobotVR/src/Motor.h
-stdio.h
--
-unistd.h
--
-errno.h
--
-string.h
--
-stdlib.h
--
-pthread.h
--
-wiringPi.h
--
-softPwm.h
--
-UnrealEngine.h
-/home/pi/RobotVR/src/UnrealEngine.h
-
-/home/pi/RobotVR/src/UDP.c
-UDP.h
-/home/pi/RobotVR/src/UDP.h
-
-/home/pi/RobotVR/src/UDP.h
+/home/GitHub/RobotVR/src/UDP.h
 stdio.h
 -
 stdlib.h
@@ -54,11 +26,7 @@ netinet/in.h
 arpa/inet.h
 -
 
-/home/pi/RobotVR/src/UnrealEngine.c
-UnrealEngine.h
-/home/pi/RobotVR/src/UnrealEngine.h
-
-/home/pi/RobotVR/src/UnrealEngine.h
+/home/GitHub/RobotVR/src/UnrealEngine.h
 stdio.h
 -
 string.h
@@ -66,7 +34,7 @@ string.h
 stdlib.h
 -
 
-/home/pi/RobotVR/src/main.c
+/home/GitHub/RobotVR/src/main.c
 stdio.h
 -
 unistd.h
@@ -84,9 +52,29 @@ wiringPi.h
 softPwm.h
 -
 UDP.h
-/home/pi/RobotVR/src/UDP.h
-Motor.h
-/home/pi/RobotVR/src/Motor.h
+/home/GitHub/RobotVR/src/UDP.h
+motor.h
+/home/GitHub/RobotVR/src/motor.h
 UnrealEngine.h
-/home/pi/RobotVR/src/UnrealEngine.h
+/home/GitHub/RobotVR/src/UnrealEngine.h
+
+/home/GitHub/RobotVR/src/motor.h
+stdio.h
+-
+unistd.h
+-
+errno.h
+-
+string.h
+-
+stdlib.h
+-
+pthread.h
+-
+wiringPi.h
+-
+softPwm.h
+-
+UnrealEngine.h
+/home/GitHub/RobotVR/src/UnrealEngine.h
 

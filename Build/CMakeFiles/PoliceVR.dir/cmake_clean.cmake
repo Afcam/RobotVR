@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PoliceVR.dir/src/Motor.c.o"
   "CMakeFiles/PoliceVR.dir/src/UDP.c.o"
   "CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o"
   "CMakeFiles/PoliceVR.dir/src/main.c.o"
+  "CMakeFiles/PoliceVR.dir/src/motor.c.o"
   "PoliceVR.pdb"
   "PoliceVR"
 )

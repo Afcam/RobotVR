@@ -1,3 +1,6 @@
+#ifndef motor
+#define motor
+
 #include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
@@ -19,10 +22,10 @@
 #define sRange 1000
 
 //Rear Motor H-bridge
-#define EnA 23
-#define EnB 24 
-#define FBpwm 25
-#define minValue 25
+#define PwmA 23
+#define PwmB 24
+// #define FBpwm 25
+#define minValue 0
 #define pwmRange 255
 #define dcClock 384
 
@@ -35,4 +38,9 @@
 
 void SG90Setup(int Pin);
 void DCRearSetup();
+void DCFrontSetup(); 
+void DCFrontSetup();
+void DCFront(char *msg);
 void DCRear(Rear *Motor);
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef _UDP_h_
+#define _UDP_h_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,3 +22,5 @@ typedef struct // Cria uma STRUCT para armazenar os dados de uma pessoa
 
 UDP *UDPSetup(int Port);
 char *UDPRead(UDP *udp);
+
+#endif
