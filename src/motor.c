@@ -15,6 +15,7 @@ void DCFrontSetup()
     pinMode(Right, OUTPUT);
 
 
+
     pinMode(Superior, INPUT);
     pinMode(Meio, INPUT);
     pinMode(Baixo, INPUT);

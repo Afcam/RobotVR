@@ -22,8 +22,8 @@
 #define sRange 1000
 
 //Rear Motor H-bridge
-#define PwmA 27
-#define PwmB 25
+#define PwmA 25
+#define PwmB 27
 // #define FBpwm 25
 #define minValue 0
 #define pwmRange 255
@@ -32,6 +32,7 @@
 //Front Motor
 #define Left 2
 #define Right 3
+
 #define Superior 4
 #define Meio  5
 #define Baixo 6

@@ -96,6 +96,8 @@ void *RearMotor()
         printf("\n+Rear: %c %d \n", Motor->Dir, Motor->Speed);
         DCRear(Motor);
         delay(1);
+        softPwmWrite(PwmA, 0);
+        softPwmWrite(PwmB, 0);
     }
 }
 // ========================================================
@@ -148,6 +150,7 @@ void *FrontMotor()
         }
         else
         {
+            printf("ta aki");
             DCFront(udp_Front->recv_data);
         }
 
