@@ -52,6 +52,7 @@ void DCRear(Rear *Motor)
 
 void DCFront (char *msg)
 {
+    
     switch (*msg)
     {
     case ('L'):

@@ -71,11 +71,21 @@ void *Orientation()
 // ========================================================
 void *RearMotor()
 {
+    pid_t pid;
     UDP *udp_Rear;
     Rear *Motor;
     DCRearSetup();
     udp_Rear = UDPSetup(30001);
     fflush(stdout);
+
+    pid = fork();
+    if (pid < 0)
+    {
+        printf("Erro!!!\n");
+        exit(-1);
+    }
+
+    
 
     for (;;)
     {
@@ -102,6 +112,8 @@ void *FrontMotor()
         msg = UDPRead(udp_Front);
         printf("++ %s\n", msg);
         DCFront(msg);
+        // delay(1);
+
     }
 }
 

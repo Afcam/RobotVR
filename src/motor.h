@@ -22,19 +22,19 @@
 #define sRange 1000
 
 //Rear Motor H-bridge
-#define PwmA 23
-#define PwmB 24
+#define PwmA 27
+#define PwmB 25
 // #define FBpwm 25
 #define minValue 0
 #define pwmRange 255
 #define dcClock 384
 
 //Front Motor
-#define Left 20
-#define Right 21
-#define Center 17
-#define MaxL 27
-#define MaxR 22
+#define Left 4
+#define Right 5
+#define Center 6
+#define MaxL 2
+#define MaxR 3
 
 void SG90Setup(int Pin);
 void DCRearSetup();

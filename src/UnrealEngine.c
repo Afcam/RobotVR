@@ -32,17 +32,32 @@ Axes *UEAxes(char *msg)
 Rear *UERear(char *msg)
 {
     Rear *Control = (Rear*)malloc(sizeof(Rear));
-    int Val = atoi(msg);
+    // int Val = atoi(msg);
+    int Val = 180;
 
-    if (Val <= 0)
+    // if (Val <= 0)
+    // {
+    //     Control->Dir = 'B';
+    //     Control->Speed = abs(Val);
+    // }
+    // else
+    // {
+    //     Control->Dir = 'F';
+    //     Control->Speed = abs(Val);
+    // }
+
+    switch (*msg)
     {
-        Control->Dir = 'B';
-        Control->Speed = abs(Val);
-    }
-    else
-    {
-        Control->Dir = 'F';
-        Control->Speed = abs(Val);
+    case ('F'):
+            Control->Dir = 'F';
+            Control->Speed = abs(Val);
+        break;
+    case ('B'):
+            Control->Dir = 'B';
+            Control->Speed = abs(Val);
+        break;
+    default:
+        break;
     }
 
     return Control;

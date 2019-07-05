@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/GitHub/RobotVR/src/UDP.c
+UDP.h
+/home/GitHub/RobotVR/src/UDP.h
+
 /home/GitHub/RobotVR/src/UDP.h
 stdio.h
 -
@@ -25,6 +29,10 @@ netinet/in.h
 -
 arpa/inet.h
 -
+
+/home/GitHub/RobotVR/src/UnrealEngine.c
+UnrealEngine.h
+/home/GitHub/RobotVR/src/UnrealEngine.h
 
 /home/GitHub/RobotVR/src/UnrealEngine.h
 stdio.h
@@ -57,6 +65,10 @@ motor.h
 /home/GitHub/RobotVR/src/motor.h
 UnrealEngine.h
 /home/GitHub/RobotVR/src/UnrealEngine.h
+
+/home/GitHub/RobotVR/src/motor.c
+motor.h
+/home/GitHub/RobotVR/src/motor.h
 
 /home/GitHub/RobotVR/src/motor.h
 stdio.h
