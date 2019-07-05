@@ -95,7 +95,7 @@ void *RearMotor()
         Motor = UERear(UDPRead(udp_Rear));
         printf("\n+Rear: %c %d \n", Motor->Dir, Motor->Speed);
         DCRear(Motor);
-        delay(1);
+        delay(10);
         softPwmWrite(PwmA, 0);
         softPwmWrite(PwmB, 0);
     }
@@ -116,7 +116,7 @@ void *FrontMotor()
     tv.tv_sec = 0;
     tv.tv_usec = 200000;
     if (setsockopt(udp_Front->sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv)) < 0)
-        perror("Error");
+       { perror("Error");}
 
     // for (;;)
     // {
@@ -150,7 +150,7 @@ void *FrontMotor()
         }
         else
         {
-            printf("ta aki");
+            // printf("ta aki");
             DCFront(udp_Front->recv_data);
         }
 
