@@ -45,10 +45,11 @@ void DCRear(Rear *Motor)
         break;
     case ('B'):
         softPwmWrite(PwmA, 0);
-        if (Motor->Speed == 0)
-            softPwmWrite(PwmB, 0);
-        else
-            softPwmWrite(PwmB, Motor->Speed);
+        softPwmWrite(PwmB, Motor->Speed);
+        // if (Motor->Speed == 0)
+        //     softPwmWrite(PwmB, 0);
+        // else
+        //     softPwmWrite(PwmB, Motor->Speed);
         break;
     default:
         break;
@@ -63,10 +64,16 @@ void DCFront (char *msg)
     case ('L'):
         digitalWrite(Left, HIGH);
         digitalWrite(Right, LOW);
+
+        delay(5);
+        digitalWrite(Left, LOW);
         break;
     case ('R'):
         digitalWrite(Left, LOW);
         digitalWrite(Right, HIGH);
+
+        delay(5);
+        digitalWrite(Right, LOW);
         break;
     default:
         break;
