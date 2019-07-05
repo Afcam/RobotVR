@@ -32,9 +32,9 @@
 //Front Motor
 #define Left 2
 #define Right 3
-#define Center 4
-#define MaxL 5
-#define MaxR 6
+#define Superior 4
+#define Meio  5
+#define Baixo 6
 
 void SG90Setup(int Pin);
 void DCRearSetup();

@@ -14,9 +14,13 @@ void DCFrontSetup()
     pinMode(Left, OUTPUT);
     pinMode(Right, OUTPUT);
 
-    pinMode(Center, INPUT);
-    pinMode(MaxL, INPUT);
-    pinMode(MaxR, INPUT);
+
+    pinMode(Superior, INPUT);
+    pinMode(Meio, INPUT);
+    pinMode(Baixo, INPUT);
+    pullUpDnControl(Superior, PUD_UP);
+    pullUpDnControl(Meio, PUD_UP);
+    pullUpDnControl(Baixo, PUD_UP);
 }
 
 void DCRearSetup()

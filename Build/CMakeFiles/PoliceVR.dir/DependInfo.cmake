@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/pi/RobotVR/src/UDP.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UDP.c.o"
-  "/home/pi/RobotVR/src/UnrealEngine.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o"
-  "/home/pi/RobotVR/src/main.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/main.c.o"
-  "/home/pi/RobotVR/src/motor.c" "/home/pi/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/motor.c.o"
+  "/home/GitHub/RobotVR/src/UDP.c" "/home/GitHub/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UDP.c.o"
+  "/home/GitHub/RobotVR/src/UnrealEngine.c" "/home/GitHub/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/UnrealEngine.c.o"
+  "/home/GitHub/RobotVR/src/main.c" "/home/GitHub/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/main.c.o"
+  "/home/GitHub/RobotVR/src/motor.c" "/home/GitHub/RobotVR/Build/CMakeFiles/PoliceVR.dir/src/motor.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

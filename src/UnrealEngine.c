@@ -27,7 +27,6 @@ Axes *UEAxes(char *msg)
 		    Rot->Yaw = -120;
 	   if (Rot->Yaw > -35)
 			 Rot->Yaw = -35;
-		
             break;
         default:
             // strcpy(Rot->Roll, token);
